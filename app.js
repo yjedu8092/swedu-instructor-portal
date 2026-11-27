@@ -760,6 +760,15 @@ function recordRows() {
   const rows = filteredRecords().slice().reverse().map((r) => [r.date, MANAGERS[0], siteName(r.siteId), roleLabel(r.role), hm(r.in?.t), hm(r.out?.t), r.out ? hhmm(minutesOf(r)) : '', r.periods || '', ATT_STATUS[attStatus(r)][0]]);
   return [head, ...rows];
 }
+function saveBlob(blob, filename) {
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  a.style.display = 'none';
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+}
 function downloadExcel() {
   const rows = recordRows();
   const name = `근무기록_${me()}_${ui.recFrom.slice(0, 7).replace('-', '')}.xlsx`;
@@ -768,10 +777,11 @@ function downloadExcel() {
     const ws = XLSX.utils.aoa_to_sheet(rows);
     ws['!cols'] = [12, 16, 20, 10, 10, 10, 14, 10, 10].map((w) => ({ wch: w }));
     const wb = XLSX.utils.book_new(); XLSX.utils.book_append_sheet(wb, ws, '근무기록');
-    XLSX.writeFile(wb, name);
+    const data = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
+    saveBlob(new Blob([data], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' }), name);
   } catch {
     const csv = '﻿' + rows.map((r) => r.map((c) => `"${String(c).replace(/"/g, '""')}"`).join(',')).join('\n');
-    const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' })); a.download = name.replace('.xlsx', '.csv'); a.click();
+    saveBlob(new Blob([csv], { type: 'text/csv;charset=utf-8' }), name.replace('.xlsx', '.csv'));
   }
   toast(`${name} 파일을 내려받았습니다.`);
 }
