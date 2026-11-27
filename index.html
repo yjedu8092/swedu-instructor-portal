@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>SW교육센터 강사 포털</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="SW교육센터 소개, 채용공고, 공지사항과 강사 포털(입퇴실, 근무기록, 스케줄, 대여, 비용청구, 문의).">
+<meta name="theme-color" content="#0a7d6c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230a7d6c'/%3E%3Cpath d='M9 20l5-9 4 6 2-3 3 6' stroke='white' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="sr" href="#main">본문 바로가기</a>
+
+  <!-- 기관 정보는 app.js 맨 위 CONFIG 에서 한 번에 바꿉니다 -->
+  <header class="hdr">
+    <div class="wrap">
+      <a class="logo" href="#top" aria-label="홈">
+        <span class="logo-mark" data-icon="spark"></span>
+        <span><span data-cfg="brand">SW교육센터</span><small data-cfg="sub">강사 포털</small></span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#about">사업 소개</a>
+        <a href="#programs">프로그램</a>
+        <a href="#notices">공지사항</a>
+        <a href="#jobs">채용공고</a>
+        <a href="#contact">오시는 길</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="hdr-actions" id="hdrActions"></div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div id="landing">
+      <section class="hero" id="top">
+        <div class="wrap">
+          <span class="eyebrow"><span data-icon="spark"></span> <span data-cfg="eyebrow">AI·SW 교육 · 강사 양성</span></span>
+          <h1><span data-cfg="heroLine1">우리 지역의 미래,</span><br><em>AI·SW 교육</em>으로 채우다</h1>
+          <p class="lead" data-cfg="lead">초·중등생을 위한 맞춤형 SW 교육과 역량 있는 전문 강사 양성의 장입니다.</p>
+          <div class="cta">
+            <a class="btn primary lg" href="#jobs"><span data-icon="briefcase"></span> 채용공고 보기</a>
+            <a class="btn lg" href="#programs">프로그램 둘러보기</a>
+            <a class="btn lg ghost" href="#login"><span data-icon="login"></span> 강사 로그인</a>
+          </div>
+          <div class="stats">
+            <div class="stat"><b>160h</b><span>강사 양성 전문 교육</span></div>
+            <div class="stat"><b>2곳</b><span>거점센터 운영</span></div>
+            <div class="stat"><b>차시 단위</b><span>투명한 강사료 정산</span></div>
+            <div class="stat"><b>찾아가는</b><span>학교·지역아동센터 방문 교육</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec alt" id="about">
+        <div class="wrap">
+          <div class="sec-head"><div class="kicker">ABOUT</div><h2>사업 소개</h2></div>
+          <div class="vision">
+            <div class="ic"><span data-icon="target"></span></div>
+            <div><span>비전</span><b>교육 격차 해소와 미래 인재 양성</b></div>
+          </div>
+          <div class="grid g3">
+            <div class="card"><div class="ic"><span data-icon="users"></span></div><h3>누구나</h3><p>도서·벽지, 소외계층을 포함한 모든 아동·청소년을 대상으로 합니다.</p></div>
+            <div class="card"><div class="ic"><span data-icon="pin"></span></div><h3>어디서나</h3><p>거점 센터와 찾아가는 방문 교육을 함께 운영합니다.</p></div>
+            <div class="card"><div class="ic"><span data-icon="award"></span></div><h3>전문성</h3><p>체계적인 교육 과정을 거친 전문 강사를 배치합니다.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec" id="programs">
+        <div class="wrap">
+          <div class="sec-head"><div class="kicker">PROGRAMS</div><h2>주요 프로그램</h2><p>강사 양성부터 학생 체험까지 함께 운영합니다.</p></div>
+          <div class="grid g2">
+            <div class="card prog"><div class="ic"><span data-icon="grad"></span></div><h3>강사 양성 과정</h3><p>미취업 청년, 경력단절 여성, 퇴직 전문가를 위한 160시간 전문 교육과 일자리 연계.</p><span class="tag">대상 · 성인</span></div>
+            <div class="card prog"><div class="ic"><span data-icon="bus"></span></div><h3>찾아가는 SW 교실</h3><p>학교와 지역아동센터로 찾아가는 맞춤형 코딩·AI 수업.</p><span class="tag">대상 · 초·중등</span></div>
+            <div class="card prog"><div class="ic"><span data-icon="cpu"></span></div><h3>센터 상설 체험</h3><p>드론, VR, 로봇, 3D 프린팅 등 최신 교구 체험.</p><span class="tag">대상 · 초·중등</span></div>
+            <div class="card prog"><div class="ic"><span data-icon="tent"></span></div><h3>특화 캠프</h3><p>방학과 주말을 활용한 집중 AI 프로젝트 캠프.</p><span class="tag">방학 · 주말</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec alt" id="features">
+        <div class="wrap">
+          <div class="sec-head"><div class="kicker">FOR INSTRUCTORS</div><h2>강사 포털에서 할 수 있는 일</h2><p>입실·퇴실부터 비용청구까지 한 화면에서 끝냅니다.</p></div>
+          <div class="grid g3" id="featureGrid"></div>
+          <div style="margin-top:24px"><a class="btn primary" href="#login"><span data-icon="login"></span> 강사 포털 바로가기</a></div>
+        </div>
+      </section>
+
+      <section class="sec" id="notices">
+        <div class="wrap">
+          <div class="sec-head"><div class="kicker">NOTICE</div><h2>공지사항</h2></div>
+          <div class="card" style="padding:6px 18px"><ul class="notice-list" id="noticeList"></ul></div>
+        </div>
+      </section>
+
+      <section class="sec alt" id="jobs">
+        <div class="wrap">
+          <div class="sec-head"><div class="kicker">CAREERS</div><h2>채용공고</h2><p>함께할 강사·운영 인력을 찾습니다.</p></div>
+          <div class="toolbar">
+            <div class="chips" id="jobFilter">
+              <button class="chip on" data-f="open">모집중</button>
+              <button class="chip" data-f="all">전체</button>
+              <button class="chip" data-f="closed">마감</button>
+            </div>
+            <input type="search" id="jobSearch" placeholder="직무·지역 검색" aria-label="채용공고 검색">
+          </div>
+          <div id="jobList"></div>
+        </div>
+      </section>
+
+      <section class="sec" id="contact">
+        <div class="wrap">
+          <div class="sec-head"><div class="kicker">CONTACT</div><h2>오시는 길 및 문의</h2></div>
+          <div class="grid g2" id="contactBox"></div>
+        </div>
+      </section>
+
+      <section class="sec alt" id="faq">
+        <div class="wrap" style="max-width:820px">
+          <div class="sec-head"><div class="kicker">FAQ</div><h2>자주 묻는 질문</h2></div>
+          <div id="faqList"></div>
+        </div>
+      </section>
+    </div>
+
+    <div id="view" hidden></div>
+  </main>
+
+  <footer class="ftr" id="footer">
+    <div class="wrap cols" id="footerCols"></div>
+  </footer>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
